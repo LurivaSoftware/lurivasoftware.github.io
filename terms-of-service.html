@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="AutoContenido desktop app: Privacy Policy, data deletion instructions and Terms of Service.">
+<title>AutoContenido Privacy &amp; Terms</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+[hidden] { display: none !important; }
+body { margin: 0; }
+/* Layout: one readable column, sticky language/section bar, legal sections as numbered clauses */
+:root {
+  --bg: #f6f6f3; --surface: #ffffff; --fg: #1d1d22; --muted: #5d5d6a; --line: #dedbd2; --accent: #7a5c00; --accent-bg: #fff3c2;
+  --sans: "IBM Plex Sans", "Segoe UI", Roboto, Arial, sans-serif; --mono: "IBM Plex Mono", Consolas, "Courier New", monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #131318; --surface: #1b1b23; --fg: #ececf1; --muted: #a2a2b4; --line: #2e2e3c; --accent: #ffd400; --accent-bg: #2c2810; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #131318; --surface: #1b1b23; --fg: #ececf1; --muted: #a2a2b4; --line: #2e2e3c; --accent: #ffd400; --accent-bg: #2c2810; color-scheme: dark }
+* { box-sizing: border-box }
+body { background: var(--bg); color: var(--fg); font-family: var(--sans); font-size: 16px; line-height: 1.65; }
+.wrap { max-width: 760px; margin: 0 auto; padding-inline: 20px; padding-block: 32px 64px; }
+header.top { display: flex; flex-direction: column; gap: 6px; padding-bottom: 20px; border-bottom: 1px solid var(--line); }
+.eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); }
+h1 { font-size: clamp(26px, 5vw, 36px); line-height: 1.15; margin: 0; text-wrap: balance; font-weight: 700; }
+.meta { color: var(--muted); font-size: 14px; margin: 0; }
+nav.bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 2; background: var(--bg); display: flex; flex-wrap: wrap; gap: 8px 16px;
+  align-items: center; justify-content: space-between; padding-block: 12px; border-bottom: 1px solid var(--line); }
+.langs { display: flex; gap: 6px; }
+.langs button { font: 600 14px var(--sans); color: var(--fg); background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 6px 12px; cursor: pointer; }
+.langs button[aria-pressed="true"] { background: var(--accent-bg); border-color: var(--accent); color: var(--fg); }
+.langs button:focus-visible, nav a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.jump { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 14px; }
+.jump a { color: var(--muted); text-decoration: none; border-bottom: 1px solid transparent; }
+.jump a:hover { color: var(--fg); border-color: var(--accent); }
+section.doc { padding-top: 28px; }
+h2 { font-size: 22px; margin: 8px 0 4px; text-wrap: balance; scroll-margin-top: 72px; }
+h3 { font-size: 16px; margin: 22px 0 4px; display: flex; gap: 10px; align-items: baseline; }
+h3 .n { font-family: var(--mono); font-size: 12px; color: var(--accent); min-width: 2.2em; }
+p, li { max-width: 66ch; }
+ul { padding-left: 1.2em; margin: 6px 0; }
+li { margin: 3px 0; }
+.note { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 14px 16px; margin: 14px 0; font-size: 15px; }
+.contact { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.contact code { font-family: var(--mono); font-size: 14px; background: var(--accent-bg); padding: 3px 8px; border-radius: 4px; user-select: all; word-break: break-all; }
+.contact button { font: 500 13px var(--sans); color: var(--fg); background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 4px 10px; cursor: pointer; }
+a { color: var(--accent); }
+footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth } }
+</style>
+
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <span class="eyebrow">AutoContenido · desktop app</span>
+    <h1 id="title">Privacy Policy and Terms of Service</h1>
+    <p class="meta" id="meta">Effective date: October 4, 2026 · Developer: Eduardo (independent developer, Mexico)</p>
+  </header>
+
+  <nav class="bar" aria-label="Language and sections">
+    <div class="langs" role="group" aria-label="Language / Idioma">
+      <button type="button" id="btn-en" data-lang="en">English</button>
+      <button type="button" id="btn-es" data-lang="es">Español</button>
+    </div>
+    <div class="jump" id="jump-en">
+      <a href="#privacy">Privacy</a><a href="#deletion">Data deletion</a><a href="#terms">Terms</a><a href="#contact">Contact</a>
+    </div>
+    <div class="jump" id="jump-es" hidden>
+      <a href="#privacidad">Privacidad</a><a href="#eliminacion">Eliminación de datos</a><a href="#terminos">Términos</a><a href="#contacto">Contacto</a>
+    </div>
+  </nav>
+
+  <!-- ============================== ENGLISH ============================== -->
+  <div lang="en" id="doc-en">
+    <section class="doc">
+      <h2 id="privacy">Privacy Policy</h2>
+      <p>AutoContenido is a personal desktop application for Windows that creates short videos and, when the user chooses to, uploads them to the user's own YouTube channels, Facebook Pages and TikTok accounts through the official APIs of those platforms. It is operated by its developer for his own accounts. There is no website account, no cloud service and no server run by the developer: the app runs entirely on the user's computer.</p>
+
+      <h3><span class="n">1</span>Information the app accesses</h3>
+      <ul>
+        <li><strong>YouTube (Google):</strong> permission to upload videos and set their title, description, tags and thumbnail, and to read the name of the connected channel. Scopes: <code>youtube.upload</code>, <code>youtube.readonly</code>.</li>
+        <li><strong>Facebook (Meta):</strong> the list of Pages the user manages and a Page access token used to publish Reels to the Page the user selects. Permissions: <code>pages_show_list</code>, <code>pages_read_engagement</code>, <code>pages_manage_posts</code>.</li>
+        <li><strong>TikTok:</strong> the account's display name and open ID, and permission to upload videos as drafts or posts. Scopes: <code>user.info.basic</code>, <code>video.upload</code> and, only if enabled, <code>video.publish</code>.</li>
+      </ul>
+      <p>The app does not read messages, comments, followers, contacts, analytics, payment information or any other personal data. It never asks for or stores passwords; the user signs in on each platform's official page.</p>
+
+      <h3><span class="n">2</span>How the information is used</h3>
+      <p>Only to upload the videos the user creates to the account the user connected, and to show which account is connected. Data is not used for advertising, profiling, or any other purpose, and is not sold or rented.</p>
+
+      <h3><span class="n">3</span>Storage and security</h3>
+      <p>Access tokens are stored only on the user's computer, encrypted with Windows Data Protection (DPAPI), so they can be decrypted only by the same Windows user on the same computer. They are never sent to the developer or to any third party other than the platform they belong to.</p>
+
+      <h3><span class="n">4</span>Sharing</h3>
+      <p>Video files and their texts are sent only to the platform the user chose (YouTube, Facebook or TikTok) through its official API. To write video scripts, the app sends the video topic to the AI text service selected by the user (for example Groq or Google Gemini); no account data or tokens are sent to those services.</p>
+
+      <h3><span class="n">5</span>Google user data</h3>
+      <p>AutoContenido's use of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Services User Data Policy</a>, including the Limited Use requirements. By using the YouTube features you agree to the <a href="https://www.youtube.com/t/terms" target="_blank" rel="noopener">YouTube Terms of Service</a>; see also the <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>.</p>
+
+      <h3><span class="n">6</span>Retention</h3>
+      <p>Tokens are kept until the user disconnects the account in the app, deletes the app's <em>credenciales</em> folder, or revokes access on the platform.</p>
+
+      <h3 id="deletion"><span class="n">7</span>Data deletion and revoking access</h3>
+      <ul>
+        <li>In the app: Publish tab › <em>Disconnect</em> next to each account. This deletes the stored token from the computer.</li>
+        <li>Google / YouTube: <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">myaccount.google.com/permissions</a> › AutoContenido › Remove access.</li>
+        <li>Facebook: Settings &amp; privacy › Settings › Business integrations (or Apps and websites) › AutoContenido › Remove.</li>
+        <li>TikTok: Profile › Settings and privacy › Security › Apps and services permissions › AutoContenido › Remove access.</li>
+      </ul>
+      <p>Because the developer keeps no copy of any user data, there is nothing else to delete. Questions about deletion can be sent to the contact below.</p>
+
+      <h3><span class="n">8</span>Children</h3>
+      <p>The app is not directed to children under 13 and is not used to collect data from them.</p>
+
+      <h3><span class="n">9</span>Changes</h3>
+      <p>Changes to this policy will be published on this page with a new effective date.</p>
+    </section>
+
+    <section class="doc">
+      <h2 id="terms">Terms of Service</h2>
+      <h3><span class="n">1</span>What the app is</h3>
+      <p>AutoContenido is a personal tool that generates short videos and uploads them to accounts owned or managed by the person using it. It uses only official platform APIs; it does not automate browsers, simulate clicks or use passwords.</p>
+      <h3><span class="n">2</span>User responsibilities</h3>
+      <ul>
+        <li>Upload only to accounts you own or are authorized to manage.</li>
+        <li>Follow the terms and community guidelines of YouTube, Facebook and TikTok, including their rules on spam, repetitive content and copyright.</li>
+        <li>Disclose AI-generated or synthetic content as each platform requires. The app marks AI content where the platform's API allows it.</li>
+        <li>Review videos before making them public; you are responsible for what you publish.</li>
+      </ul>
+      <h3><span class="n">3</span>Third-party content</h3>
+      <p>Images come from free-license sources (such as Wikimedia Commons and Openverse) and map imagery from Sentinel-2 cloudless (EOX). Credits are added to each video description. Music added by the user must be properly licensed.</p>
+      <h3><span class="n">4</span>No warranty</h3>
+      <p>The app is provided "as is", without warranties of any kind. The developer is not liable for account actions taken by platforms, lost content or indirect damages arising from its use.</p>
+      <h3><span class="n">5</span>Termination</h3>
+      <p>You can stop using the app at any time by disconnecting your accounts and deleting it. Platforms may revoke the app's access under their own policies.</p>
+      <h3><span class="n">6</span>Governing law</h3>
+      <p>These terms are governed by the laws of Mexico.</p>
+    </section>
+
+    <section class="doc">
+      <h2 id="contact">Contact</h2>
+      <div class="note contact"><span>Developer: Eduardo ·</span> <code id="mail-en">eduardhe86@gmail.com</code> <button type="button" class="copy" data-target="mail-en">Copy</button></div>
+    </section>
+  </div>
+
+  <!-- ============================== ESPAÑOL ============================== -->
+  <div lang="es" id="doc-es" hidden>
+    <section class="doc">
+      <h2 id="privacidad">Política de privacidad</h2>
+      <p>AutoContenido es una aplicación personal de escritorio para Windows que crea videos cortos y, cuando el usuario lo decide, los sube a sus propios canales de YouTube, Páginas de Facebook y cuentas de TikTok mediante las APIs oficiales de esas plataformas. La opera su desarrollador para sus propias cuentas. No hay cuentas en un sitio web, ni servicio en la nube, ni servidores del desarrollador: la app funciona por completo en la computadora del usuario.</p>
+
+      <h3><span class="n">1</span>Información a la que accede la app</h3>
+      <ul>
+        <li><strong>YouTube (Google):</strong> permiso para subir videos y poner su título, descripción, etiquetas y miniatura, y para leer el nombre del canal conectado. Permisos: <code>youtube.upload</code>, <code>youtube.readonly</code>.</li>
+        <li><strong>Facebook (Meta):</strong> la lista de Páginas que administra el usuario y un token de Página para publicar Reels en la Página que elija. Permisos: <code>pages_show_list</code>, <code>pages_read_engagement</code>, <code>pages_manage_posts</code>.</li>
+        <li><strong>TikTok:</strong> el nombre visible y el identificador (open ID) de la cuenta, y permiso para subir videos como borrador o publicación. Permisos: <code>user.info.basic</code>, <code>video.upload</code> y, solo si se activa, <code>video.publish</code>.</li>
+      </ul>
+      <p>La app no lee mensajes, comentarios, seguidores, contactos, estadísticas, datos de pago ni ningún otro dato personal. Nunca pide ni guarda contraseñas: el usuario inicia sesión en la página oficial de cada plataforma.</p>
+
+      <h3><span class="n">2</span>Para qué se usa</h3>
+      <p>Solo para subir los videos que crea el usuario a la cuenta que conectó y para mostrar qué cuenta está conectada. No se usa para publicidad ni perfiles, y no se vende ni se renta.</p>
+
+      <h3><span class="n">3</span>Almacenamiento y seguridad</h3>
+      <p>Los tokens se guardan solo en la computadora del usuario, cifrados con la Protección de Datos de Windows (DPAPI): únicamente el mismo usuario de Windows en la misma computadora puede descifrarlos. Nunca se envían al desarrollador ni a terceros, salvo a la plataforma a la que pertenecen.</p>
+
+      <h3><span class="n">4</span>Con quién se comparte</h3>
+      <p>Los videos y sus textos se envían solo a la plataforma que el usuario eligió (YouTube, Facebook o TikTok) mediante su API oficial. Para escribir los guiones, la app envía el tema del video al servicio de IA que el usuario seleccione (por ejemplo Groq o Google Gemini); no se envían datos de cuentas ni tokens a esos servicios.</p>
+
+      <h3><span class="n">5</span>Datos de usuarios de Google</h3>
+      <p>El uso que hace AutoContenido de la información recibida de las APIs de Google cumple la <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Política de datos de usuario de los servicios de API de Google</a>, incluidos los requisitos de Uso Limitado. Al usar las funciones de YouTube aceptas los <a href="https://www.youtube.com/t/terms" target="_blank" rel="noopener">Términos de servicio de YouTube</a>; consulta también la <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de privacidad de Google</a>.</p>
+
+      <h3><span class="n">6</span>Conservación</h3>
+      <p>Los tokens se conservan hasta que el usuario desconecta la cuenta en la app, borra la carpeta <em>credenciales</em> o revoca el acceso en la plataforma.</p>
+
+      <h3 id="eliminacion"><span class="n">7</span>Eliminación de datos y revocar el acceso</h3>
+      <ul>
+        <li>En la app: pestaña Publicar › <em>Desconectar</em> junto a cada cuenta. Esto borra el token guardado en la computadora.</li>
+        <li>Google / YouTube: <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">myaccount.google.com/permissions</a> › AutoContenido › Quitar acceso.</li>
+        <li>Facebook: Configuración y privacidad › Configuración › Integraciones comerciales (o Apps y sitios web) › AutoContenido › Eliminar.</li>
+        <li>TikTok: Perfil › Ajustes y privacidad › Seguridad › Apps y servicios con permiso › AutoContenido › Quitar acceso.</li>
+      </ul>
+      <p>Como el desarrollador no guarda ninguna copia de datos de usuarios, no hay nada más que eliminar. Dudas sobre la eliminación: al contacto de abajo.</p>
+
+      <h3><span class="n">8</span>Menores</h3>
+      <p>La app no está dirigida a menores de 13 años ni se usa para recopilar datos de ellos.</p>
+
+      <h3><span class="n">9</span>Cambios</h3>
+      <p>Los cambios a esta política se publicarán en esta página con una nueva fecha de vigencia.</p>
+    </section>
+
+    <section class="doc">
+      <h2 id="terminos">Términos de servicio</h2>
+      <h3><span class="n">1</span>Qué es la app</h3>
+      <p>AutoContenido es una herramienta personal que genera videos cortos y los sube a cuentas que pertenecen o administra quien la usa. Usa solo APIs oficiales; no automatiza navegadores, no simula clics y no usa contraseñas.</p>
+      <h3><span class="n">2</span>Responsabilidades del usuario</h3>
+      <ul>
+        <li>Subir solo a cuentas propias o que estés autorizado a administrar.</li>
+        <li>Respetar los términos y normas de la comunidad de YouTube, Facebook y TikTok, incluidas sus reglas sobre spam, contenido repetitivo y derechos de autor.</li>
+        <li>Declarar el contenido generado con IA o sintético como lo pida cada plataforma. La app lo marca cuando la API de la plataforma lo permite.</li>
+        <li>Revisar los videos antes de hacerlos públicos; eres responsable de lo que publicas.</li>
+      </ul>
+      <h3><span class="n">3</span>Contenido de terceros</h3>
+      <p>Las imágenes provienen de fuentes con licencia libre (como Wikimedia Commons y Openverse) y las imágenes de mapas de Sentinel-2 cloudless (EOX). Los créditos se agregan a la descripción de cada video. La música que agregue el usuario debe tener licencia adecuada.</p>
+      <h3><span class="n">4</span>Sin garantía</h3>
+      <p>La app se ofrece "tal cual", sin garantías de ningún tipo. El desarrollador no es responsable de acciones que las plataformas tomen sobre las cuentas, de contenido perdido ni de daños indirectos derivados de su uso.</p>
+      <h3><span class="n">5</span>Terminación</h3>
+      <p>Puedes dejar de usar la app en cualquier momento desconectando tus cuentas y borrándola. Las plataformas pueden revocar el acceso de la app según sus propias políticas.</p>
+      <h3><span class="n">6</span>Ley aplicable</h3>
+      <p>Estos términos se rigen por las leyes de México.</p>
+    </section>
+
+    <section class="doc">
+      <h2 id="contacto">Contacto</h2>
+      <div class="note contact"><span>Desarrollador: Eduardo ·</span> <code id="mail-es">eduardhe86@gmail.com</code> <button type="button" class="copy" data-target="mail-es">Copiar</button></div>
+    </section>
+  </div>
+
+  <footer id="foot">AutoContenido · Privacy Policy and Terms of Service · Effective October 4, 2026</footer>
+</div>
+
+<script>
+(function () {
+  var ES_IDS = ["privacidad", "eliminacion", "terminos", "contacto", "es"];
+  var TXT = {
+    en: { title: "Privacy Policy and Terms of Service", meta: "Effective date: October 4, 2026 · Developer: Eduardo (independent developer, Mexico)",
+          foot: "AutoContenido · Privacy Policy and Terms of Service · Effective October 4, 2026", copied: "Copied" , copy: "Copy" },
+    es: { title: "Política de privacidad y Términos de servicio", meta: "Vigente desde: 4 de octubre de 2026 · Desarrollador: Eduardo (desarrollador independiente, México)",
+          foot: "AutoContenido · Política de privacidad y Términos de servicio · Vigente desde el 4 de octubre de 2026", copied: "Copiado", copy: "Copiar" }
+  };
+  function setLang(l, keepScroll) {
+    document.getElementById("doc-en").hidden = l !== "en";
+    document.getElementById("doc-es").hidden = l !== "es";
+    document.getElementById("jump-en").hidden = l !== "en";
+    document.getElementById("jump-es").hidden = l !== "es";
+    document.getElementById("btn-en").setAttribute("aria-pressed", String(l === "en"));
+    document.getElementById("btn-es").setAttribute("aria-pressed", String(l === "es"));
+    document.getElementById("title").textContent = TXT[l].title;
+    document.getElementById("meta").textContent = TXT[l].meta;
+    document.getElementById("foot").textContent = TXT[l].foot;
+    document.documentElement.lang = l;
+    if (!keepScroll) window.scrollTo(0, 0);
+  }
+  var h = (location.hash || "").replace("#", "");
+  var pth = location.pathname.toLowerCase();
+  if (!h && pth.indexOf("termino") >= 0) h = "terminos";
+  else if (!h && pth.indexOf("term") >= 0) h = "terms";
+  var start = ES_IDS.indexOf(h) >= 0 ? "es" : (h ? "en" : ((navigator.language || "en").toLowerCase().indexOf("es") === 0 ? "es" : "en"));
+  setLang(start, true);
+  if (h && h !== "es" && h !== "en") { var t = document.getElementById(h); if (t) t.scrollIntoView(); }
+  document.querySelectorAll(".langs button").forEach(function (b) {
+    b.addEventListener("click", function () { setLang(b.getAttribute("data-lang")); });
+  });
+  document.querySelectorAll("button.copy").forEach(function (b) {
+    b.addEventListener("click", function () {
+      var el = document.getElementById(b.getAttribute("data-target"));
+      var l = document.documentElement.lang === "es" ? "es" : "en";
+      var done = function () { b.textContent = TXT[l].copied; setTimeout(function () { b.textContent = TXT[l].copy; }, 1500); };
+      try {
+        navigator.clipboard.writeText(el.textContent).then(done, function () { select(el); });
+      } catch (e) { select(el); }
+    });
+  });
+  function select(el) { var r = document.createRange(); r.selectNodeContents(el); var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); }
+})();
+</script>
+
+</body>
+</html>
